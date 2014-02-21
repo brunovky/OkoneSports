@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.password">br111092</property>
+        <property name="hibernate.connection.url">jdbc:mysql://localhost/okonesports</property>
+        <property name="hibernate.connection.username">brunovky</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+        <property name="hibernate.format_sql">true</property>
+        <property name="hibernate.show_sql">true</property>
+        
+        <mapping class="br.edu.fatec.okonesports.model.Carrinho" />        
+        <mapping class="br.edu.fatec.okonesports.model.Categoria" />        
+        <mapping class="br.edu.fatec.okonesports.model.Endereco" />        
+        <mapping class="br.edu.fatec.okonesports.model.ItemCarrinho" />        
+        <mapping class="br.edu.fatec.okonesports.model.Produto" />        
+        <mapping class="br.edu.fatec.okonesports.model.Usuario" />                        
+    </session-factory>
+</hibernate-configuration>
