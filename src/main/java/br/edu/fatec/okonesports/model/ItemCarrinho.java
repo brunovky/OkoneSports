@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import com.google.common.base.Objects;
 
 @Entity
-public class ItemCarrinho {
+public class ItemCarrinho /*extends DefaultAdapter<ItemCarrinhoVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

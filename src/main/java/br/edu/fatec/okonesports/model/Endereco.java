@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import com.google.common.base.Objects;
 
 @Entity
-public class Endereco {
+public class Endereco /*extends DefaultAdapter<EnderecoVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

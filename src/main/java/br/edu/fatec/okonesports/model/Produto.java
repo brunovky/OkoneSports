@@ -11,7 +11,7 @@ import javax.persistence.Id;
 import com.google.common.base.Objects;
 
 @Entity
-public class Produto {
+public class Produto /*extends DefaultAdapter<ProdutoVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

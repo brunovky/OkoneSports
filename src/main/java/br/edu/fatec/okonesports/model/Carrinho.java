@@ -14,7 +14,7 @@ import javax.persistence.TemporalType;
 import com.google.common.base.Objects;
 
 @Entity
-public class Carrinho {
+public class Carrinho /*extends DefaultAdapter<CarrinhoVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

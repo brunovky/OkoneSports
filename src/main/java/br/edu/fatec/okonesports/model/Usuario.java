@@ -15,7 +15,7 @@ import com.google.common.base.Objects;
 import br.edu.fatec.okonesports.enums.TipoUsuario;
 
 @Entity
-public class Usuario {
+public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)

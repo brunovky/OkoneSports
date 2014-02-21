@@ -8,7 +8,7 @@ import javax.persistence.Id;
 import com.google.common.base.Objects;
 
 @Entity
-public class Categoria {
+public class Categoria /*extends DefaultAdapter<CategoriaVO>*/ {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
