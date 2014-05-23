@@ -10,12 +10,12 @@ import javax.persistence.Id;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.google.common.base.Objects;
-
 import br.edu.fatec.okonesports.enums.TipoUsuario;
 
+import com.google.common.base.Objects;
+
 @Entity
-public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
+public class Usuario {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -29,12 +29,10 @@ public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
 	private Calendar dataNascimento;
 	@Enumerated
 	private TipoUsuario tipo;
-	private Long idEndereco;
 	private Boolean ativo;
 
 	public Usuario(String nome, String email, String senha, String rg,
-			String cpf, Calendar dataNascimento, TipoUsuario tipo,
-			Long idEndereco, Boolean ativo) {
+			String cpf, Calendar dataNascimento, TipoUsuario tipo, Boolean ativo) {
 		this.nome = nome;
 		this.email = email;
 		this.senha = senha;
@@ -42,7 +40,6 @@ public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
 		this.cpf = cpf;
 		this.dataNascimento = dataNascimento;
 		this.tipo = tipo;
-		this.idEndereco = idEndereco;
 		this.ativo = ativo;
 	}
 
@@ -113,14 +110,6 @@ public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
 		this.tipo = tipo;
 	}
 
-	public Long getIdEndereco() {
-		return idEndereco;
-	}
-
-	public void setIdEndereco(Long idEndereco) {
-		this.idEndereco = idEndereco;
-	}
-
 	public Boolean getAtivo() {
 		return ativo;
 	}
@@ -133,8 +122,8 @@ public class Usuario /*extends DefaultAdapter<UsuarioVO>*/ {
 	public String toString() {
 		return Objects.toStringHelper(this).addValue(id).addValue(nome)
 				.addValue(email).addValue(senha).addValue(rg).addValue(cpf)
-				.addValue(dataNascimento).addValue(tipo).addValue(idEndereco)
-				.addValue(ativo).toString();
+				.addValue(dataNascimento).addValue(tipo).addValue(ativo)
+				.toString();
 	}
 
 }

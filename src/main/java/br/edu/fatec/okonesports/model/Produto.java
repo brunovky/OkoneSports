@@ -11,25 +11,23 @@ import javax.persistence.Id;
 import com.google.common.base.Objects;
 
 @Entity
-public class Produto /*extends DefaultAdapter<ProdutoVO>*/ {
+public class Produto {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 	private String nome;
 	private String descricao;
+	private String imagem;
 	@Column(precision = 8, scale = 2)
 	private BigDecimal valor;
-	private String marca;
-	private Long idCategoria;
 
-	public Produto(String nome, String descricao, BigDecimal valor,
-			String marca, Long idCategoria) {
+	public Produto(String nome, String descricao, String imagem,
+			BigDecimal valor) {
 		this.nome = nome;
 		this.descricao = descricao;
+		this.imagem = imagem;
 		this.valor = valor;
-		this.marca = marca;
-		this.idCategoria = idCategoria;
 	}
 
 	public Produto() {
@@ -60,6 +58,14 @@ public class Produto /*extends DefaultAdapter<ProdutoVO>*/ {
 		this.descricao = descricao;
 	}
 
+	public String getImagem() {
+		return imagem;
+	}
+
+	public void setImagem(String imagem) {
+		this.imagem = imagem;
+	}
+
 	public BigDecimal getValor() {
 		return valor;
 	}
@@ -68,27 +74,11 @@ public class Produto /*extends DefaultAdapter<ProdutoVO>*/ {
 		this.valor = valor;
 	}
 
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public Long getIdCategoria() {
-		return idCategoria;
-	}
-
-	public void setIdCategoria(Long idCategoria) {
-		this.idCategoria = idCategoria;
-	}
-
 	@Override
 	public String toString() {
 		return Objects.toStringHelper(this).addValue(id).addValue(nome)
-				.addValue(descricao).addValue(valor).addValue(marca)
-				.addValue(idCategoria).toString();
+				.addValue(descricao).addValue(imagem).addValue(valor)
+				.toString();
 	}
 
 }
